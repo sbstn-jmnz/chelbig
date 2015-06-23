@@ -1,0 +1,48 @@
+
+
+<%= form_for(@image) do |f| %>
+<% if @image.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
+    <ul>
+    <% @image.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="container">
+  <div class="col-md-6">
+    <form>
+        <div class="form-group">
+          <%= f.label :picture, "Imagen" %>
+          <%= f.file_field :picture%>
+        </div>
+        <div class="form-group">
+          <%= f.label :visualization, "Vista de día" %>
+          <%= f.check_box :visualization %>
+        </div>
+        <div class="form-group">
+          <%= f.label :panel_id, "Tipo de Panel" %><br>
+          <%= f.collection_select :panel_id, Panel.all, :id, :name, {prompt: "Seleccione tipo de panel"}, {class: "form-control"} %>
+        </div>
+        <div class="form-group">
+          <%= f.label :color_id, "Color" %><br>
+          <%= f.collection_select :color_id, Color.all, :id, :name, {prompt: "Seleccione color"}, {class: "form-control"} %>
+        </div>
+        <div class="form-group">
+          <%= f.label :drilling_id, "Tipo de Textura" %><br>
+          <%= f.collection_select :drilling_id, Drilling.all, :id, :name, {prompt: "Seleccione textura"}, {class: "form-control"}  %>
+        </div>
+        <div class="form-group">
+          <%= f.label :edification_id, "Tipo de Edificación" %><br>
+          <%= f.collection_select :edification_id, Edification.all, :id, :name, {prompt: "Seleccione Edificación"}, {class: "form-control"}  %>
+        </div>
+        <br>
+        <%= f.submit "Guardar", :class => 'btn btn-primary' %>
+
+      <% end %>
+    </form>
+  </div>  
+</div>

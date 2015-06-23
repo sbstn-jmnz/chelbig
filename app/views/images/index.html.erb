@@ -1,0 +1,32 @@
+<div class="container">
+	<h2>Listado de Imágenes</h2>
+
+	<% @images.each do |image| %>
+		
+		<div class="col-md-4">
+			<div class="thumbnail">
+				<%= image_tag(image.picture, :style =>'width:300px')%>
+				<%= image.visualization %>
+				<%= image.panel_id %>
+				<%= image.color_id%>
+				<%= image.drilling_id %>
+				<%= image.edification_id %>
+					<div class "buttons" style="margin-top:10px; margin-bottom:10px">
+						<%= link_to 'Mostrar', image, :class => 'btn btn-default' %>
+						<%= link_to 'Editar', edit_image_path(image), :class => 'btn btn-default' %>
+						<%= link_to 'Eliminar', image, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default' %>
+					</div>
+			</div>
+		</div>			
+		<% end %>
+</div>		
+
+<div class="container">
+
+<a href="<%=new_image_path %>"> NUEVA IMAGEN </a>
+<br>
+
+<a href="<%=destroy_user_session_path %>"  data-method="delete" > SALIR</a>
+
+</div>
+

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  picture: MyString
+  visualization: false
+  panel_id: 1
+  color_id: 1
+  drilling_id: 1
+  edification_id: 1
+
+two:
+  picture: MyString
+  visualization: false
+  panel_id: 1
+  color_id: 1
+  drilling_id: 1
+  edification_id: 1

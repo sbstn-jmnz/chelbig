@@ -1,0 +1,175 @@
+
+<!--
+<% if current_user.nil? %>
+    <a href="<%=new_user_session_path %>"> INICIO DE SESION </a>
+    <a href="<%=new_user_registration_path %>"> REGISTRO </a>      
+    <% else %>
+    <a href="<%=images_path %>"> ADMINISTRAR IMÁGENES</a>
+    <a href="<%=destroy_user_session_path %>"  data-method="delete" > SALIR </a>
+<% end %>
+-->
+
+<div class="contenedor">
+      <div class="row content">
+        <aside class="col-md-2 col-lg-2 col-xs-12">
+            <a href="<%=root_path %>"><%= image_tag("logo.png", :style => "width:100%", :alt =>"INSTAPANEL Fachadas", :class=>"logo") %></a> 
+                 <ul class="menu">
+                  <li><a href="#" onClick="VerDiv(this, 'paneles')"><span>tipos de paneles</span> <i class="ico ico-01"></i></a></li>
+                    <li><a href="#" onClick="VerDiv(this, 'colores')"><span>gama de colores</span> <i class="ico ico-02"></i></a></li>
+                    <li><a href="#" onClick="VerDiv(this, 'perfora')"><span>perforaciones</span> <i class="ico ico-03"></i></a></li>
+                    <li><a href="#" onClick="VerDiv(this, 'vista')"><span>visualizaciones</span> <i class="ico ico-04"></i></a></li>
+                 </ul>
+            
+          </aside>
+            <section class="col-md-10 col-lg-10 col-xs-12 bgFoto" style="background-image:url(<%= asset_path 'fotobg.jpg' %>);">
+
+            <article class="col-md-12 col-lg-12 col-xs-12 caja divs oculto" id="paneles">
+                  <div class="flec"></div>
+                    <div class="columna">
+                      <div class="col-md-12 col-xs-12">
+                        <h2>Quator</h2>
+                            <a href="#" class="contGris">
+                              <%= image_tag("panel/quartor-light-foto.png", :alt=>"") %>
+                                <p>Quator Light</p> 
+                            </a>
+                        </div>
+                      <div class="col-md-12 col-xs-12">
+                          <a href="#" class="contGris">
+                              <%= image_tag("panel/quartor-medium-foto.png", :alt=>"") %>               
+                                <p>Quator Medium</p> 
+                            </a>
+                      </div>
+                      <div class="col-md-12 col-xs-12">
+                          <a href="#" class="contGris">
+                              <%= image_tag("panel/quator-broad-foto.png", :alt=>"") %>
+                                <p>Quator Broad</p> 
+                            </a>
+                      </div>
+                     </div>
+                     <div class="columna">
+                      <div class="col-md-12 col-xs-12">
+                        <h2>Capsa</h2> 
+                            <a href="#" class="contGris">
+                              <%= image_tag("panel/capsa-c100-foto.png", :alt=>"") %>                            
+                                <p>Capsa C100</p> 
+                            </a>
+                      </div>
+                      <div class="col-md-12 col-xs-12">
+                        <a href="#" class="contGris">
+                              <%= image_tag("panel/capsa-c200-foto.png", :alt=>"") %>                         
+                                <p>Capsa C200</p> 
+                            </a>
+                      </div>
+                      <div class="col-md-12 col-xs-12">
+                        <a href="#" class="contGris">
+                              <%= image_tag("panel/capsa-c350-foto.png", :alt=>"") %>                         
+                                <p>Capsa C350</p> 
+                            </a>
+                      </div>
+                    </div>
+                </article>
+                <article class="col-md-12 col-lg-12 col-xs-12 caja divs oculto" id="colores" >
+                  <div class="flec"></div>
+                      <div class="col-md-3 col-xs-6 line">
+                        <h2>Verdes</h2>
+                            <a href="#" class="clr-ver-1"></a>
+                            <a href="#" class="clr-ver-2"></a>
+                            <a href="#" class="clr-ver-3"></a>
+                            <a href="#" class="clr-ver-4"></a>
+                        </div>
+                        <div class="col-md-3 col-xs-6 line">
+                        <h2>Amarillos</h2>
+                            <a href="#" class="clr-ama-1"></a>
+                            <a href="#" class="clr-ama-2"></a>
+                            <a href="#" class="clr-ama-3"></a>
+                            <a href="#" class="clr-ama-4"></a>
+                        </div>
+                        <div class="col-md-3 col-xs-6 line">
+                        <h2>Rojos</h2>
+                            <a href="#" class="clr-roj-1"></a>
+                            <a href="#" class="clr-roj-2"></a>
+                            <a href="#" class="clr-roj-3"></a>
+                            <a href="#" class="clr-roj-4"></a>
+                        </div>
+                        <div class="col-md-3 col-xs-6 line">
+                        <h2>Azul</h2>
+                            <a href="#" class="clr-azu-1"></a>
+                            <a href="#" class="clr-azu-2"></a>
+                            <a href="#" class="clr-azu-3"></a>
+                            <a href="#" class="clr-azu-4"></a>
+                        </div>
+                        <div class="col-md-3 col-xs-6 line">
+                        <h2>Metálicos</h2>
+                            <a href="#" class="clr-met-1"></a>
+                            <a href="#" class="clr-met-2"></a>
+                            <a href="#" class="clr-met-3"></a>
+                            <a href="#" class="clr-met-4"></a>
+                        </div>
+                        <div class="col-md-3 col-xs-6 line">
+                        <h2>Negros</h2>
+                            <a href="#" class="clr-neg-1"></a>
+                            <a href="#" class="clr-neg-2"></a>
+                            <a href="#" class="clr-neg-3"></a>
+                            <a href="#" class="clr-neg-4"></a>
+                        </div>
+                        <div class="col-md-3 col-xs-6 line">
+                        <h2>Blanco</h2>
+                            <a href="#" class="clr-blco"></a>
+                           
+                        </div>
+                </article>
+                <article class="col-md-3 col-lg-3 col-xs-8 caja divs oculto" id="perfora" >
+                  <div class="flec"></div>
+                  <div class="col-md-12 col-xs-12">
+                      <div>
+                        <input name="perforacion" type="radio" value="SI">
+                            <h2>SI</h2>
+                        </div>
+                      <div>
+                          <input name="perforacion" type="radio" value="SI">
+                        <h2>NO</h2>
+                        </div>   
+                    </div>
+                </article>
+                <article class="col-md-3 col-lg-3 col-xs-8 caja divs oculto" id="vista" >
+                  <div class="flec"></div>
+                    <div class="col-md-12 col-xs-12">
+                      <div>
+                        <input name="vista" type="radio" value="DIA">
+                            <h2>DIA</h2>
+                        </div>
+                      <div>
+                          <input name="vista" type="radio" value="NOCHE">
+                        <h2>NOCHE</h2>
+                        </div>   
+                    </div>
+                </article>
+          </section>
+            <footer> 
+            <div class="col-md-2 col-xs-6 col-md-offset-2">
+                  <%= image_tag("panel/capsa-c100.png", :alt=>"") %>             
+                </div>
+                <div class="col-md-2 col-xs-6">
+                  <%= image_tag("colores/color7.png", :alt=>"") %>  
+                </div>
+                <div class="col-md-2 col-xs-6">
+                  <%= image_tag("perforacion/perfora1.png", :alt=>"") %>  
+                </div>
+                <div class="col-md-2 col-xs-6">
+                  <%= image_tag("vista/vista1.png", :alt=>"") %>  
+                </div>
+                <div class="col-md-2 col-xs-12 link">
+                  <ul>
+                    <li><a href="#">mostrar</a></li>
+                      <li><a href="http://info.cintac.cl/contacto">contáctenos</a></li>
+                    </ul>
+                </div>
+        </footer>
+      </div>
+        
+            
+    </div>
+
+
+
+

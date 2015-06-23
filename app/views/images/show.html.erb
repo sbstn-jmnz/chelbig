@@ -1,0 +1,27 @@
+
+<div class="container">
+  <h2> Vista de la imagen </h2>
+  <div class="col-md-6">
+      <%= image_tag(@image.picture, :style =>'width:800px')%>
+  </div>
+  <div class="col-md-6">
+    <div class="thumbnail">  
+      <h3>Características</h3>
+      <p><%= @image.visualization %></p>
+      <p><%= @image.panel_id %></p>
+      <p><%= @image.color_id %></p>
+      <p><%= @image.drilling_id %></p>
+      <p><%= @image.edification_id %></p>
+    </div>  
+  </div>  
+</div>
+<br>
+<br>
+<div class="container">
+  <div class="col-md-6">
+    <%= link_to 'EDITAR', edit_image_path(@image) %> |
+    <%= link_to 'VOLVER', images_path %> |
+    <a href="<%=destroy_user_session_path %>"  data-method="delete" > SALIR </a>
+  </div> 
+</div>
+<br>
